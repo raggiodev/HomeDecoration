@@ -32,6 +32,11 @@ header {
 header>a {
     height: 100%;
     text-decoration: none;
+    transition: .5s ease;
+}
+
+header>a:hover {
+    filter: brightness(1.7);
 }
 
 header>a>picture {
