@@ -42,8 +42,8 @@ header>a:hover {
 header>a>picture {
     display: flex;
     max-height: 90%;
-    width: 25em;
     aspect-ratio: 1;
+    width: 25em;
 }
 
 header>a picture figcaption {
@@ -173,7 +173,7 @@ main {
     cursor: pointer;
 }
 
-/*SCROLL BUTTON*/
+/*SCROLL*/
 #scrollButton {
     display: none;
     position: fixed;
@@ -182,19 +182,27 @@ main {
     width: 50px;
     height: 50px;
     border-radius: 50%;
+    background-color: #ffffff80;
     color: #111111dd;
-    background-color: #ffffff60;
     cursor: pointer;
-    z-index: 10;
+    z-index: 1;
+    border: none;
+    transition: .2s ease;
 }
 
 #scrollButton.show {
     display: block;
 }
 
+#scrollButton:active {
+    background-color: #ffffffaa;
+    color: #111;
+}
+
 #scrollButton:hover {
-    background-color: #333;
     scale: 1.1;
+    color: #111111;
+    background-color: #857c7c;
 }
 
 #scrollButton>* {
@@ -210,11 +218,9 @@ main {
     from {
         translate: 0 0;
     }
-
     50% {
         translate: 0 -.1em;
     }
-
     to {
         translate: 0 0;
     }
@@ -243,14 +249,13 @@ footer ul li a * {
 
 footer ul li a *:hover {
     scale: 1.7;
-    color: #0ff;
+    color: #fff;
 }
 
 @media screen and (max-width: 768px) {
     .splide li {
         font-size: 4em;
     }
-
     .sectors {
         padding: 1rem;
         gap: .5rem;
