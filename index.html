@@ -36,6 +36,15 @@
                 </ul>
             </div>
         </section>
+        <script>
+            document.addEventListener('DOMContentLoaded', function () {
+                new Splide('.splide', {
+                    type: 'loop', // Para que las imágenes se reproduzcan en bucle
+                    autoplay: true, // Activa la reproducción automática
+                    interval: 3000, // Intervalo de tiempo entre cada imagen en milisegundos (en este ejemplo, 3 segundos)
+                }).mount();
+            });
+        </script>
         <section class="sectors">
             <article style="background-image: url('./assets/img/floor.jpg')">
                 <h1>Floors</h1>
