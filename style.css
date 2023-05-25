@@ -1,72 +1,59 @@
 @import url('https://fonts.googleapis.com/css2?family=Oswald:wght@400;500&family=Poppins&display=swap');
-
-* {
+*{
     margin: 0;
     padding: 0;
     box-sizing: border-box;
     font-family: 'Oswald', 'Poppins', sans-serif;
     font-size: 1.3rem;
-    text-decoration: none;
 }
-
-html {
+html{
     scroll-behavior: smooth;
 }
-
-body {
+body{
     background: linear-gradient(90deg, #111, #333, #111);
     background-size: cover;
     min-height: 100vh;
 }
-
-header {
+header{
     height: 10vh;
     background: linear-gradient(45deg, #ccc, #555);
     display: flex;
     justify-content: space-between;
     align-items: center;
+    align-content: center;
     padding-left: 1em;
     padding-right: 1em;
 }
-
-header>a {
+header>a{
     height: 100%;
     text-decoration: none;
     transition: .5s ease;
-}
-
-header>a:hover {
-    filter: brightness(1.7);
-}
-
-header>a>picture {
     display: flex;
     max-height: 90%;
     aspect-ratio: 1;
     width: 25em;
 }
-
-header>a picture figcaption {
+header>a:hover{
+    filter:brightness(1.7);
+}
+header>a h1 {
     text-align: center;
     font-size: 2em;
     font-weight: 600;
     color: #1a394a;
 }
-
-header ul {
+header ul{
     list-style: none;
     height: 100%;
     display: flex;
     gap: 1em;
 }
-
-header nav a {
+header nav a{
     text-decoration: none;
     color: #ddd;
     position: relative;
 }
-
-header nav a:before {
+header nav a:before{
     content: "";
     position: absolute;
     bottom: 0;
@@ -75,16 +62,13 @@ header nav a:before {
     width: 0%;
     transition: .5s ease-in;
 }
-
-header nav a:hover:before {
+header nav a:hover:before{
     width: 100%;
 }
-
-main {
+main{
     min-height: 80vh;
 }
-
-.splide li {
+.splide li{
     font-size: xx-large;
     color: #fff;
     height: 80vh;
@@ -97,63 +81,52 @@ main {
     font-size: 8em;
     text-shadow: 2px 2px 8px #111;
 }
-
-.splide li:hover {
+.splide li:hover{
     cursor: grab;
 }
-
-.splide li:active {
+.splide li:active{
     cursor: grabbing;
 }
-
-.splide__pagination__page {
+.splide__pagination__page{
     display: none !important;
 }
-
 @keyframes move {
-    from {
+    from{
         background-position: top left;
     }
     50% {
         background-position: bottom right;
     }
-    from {
+    from{
         background-position: top left;
     }
 }
-
-.sectors {
+.sectors{
     padding-top: 2rem;
     padding: 2rem;
     display: grid;
     gap: 1.5rem;
     grid-auto-columns: 1fr;
-    grid-template-areas:
+    grid-template-areas: 
         "one one two three"
         "four five five three";
 }
-
-.sectors>article:nth-child(1) {
+.sectors>article:nth-child(1){
     grid-area: one;
 }
-
-.sectors>article:nth-child(2) {
+.sectors>article:nth-child(2){
     grid-area: two;
 }
-
-.sectors>article:nth-child(3) {
+.sectors>article:nth-child(3){
     grid-area: three;
 }
-
-.sectors>article:nth-child(4) {
+.sectors>article:nth-child(4){
     grid-area: four;
 }
-
-.sectors>article:nth-child(5) {
+.sectors>article:nth-child(5){
     grid-area: five;
 }
-
-.sectors article {
+.sectors article{
     min-height: 10rem;
     border-radius: 15px;
     background-color: aqua;
@@ -164,15 +137,13 @@ main {
     justify-content: center;
     transition: .5s ease;
 }
-
-.sectors article:hover {
-    mix-blend-mode: luminosity;
+.sectors article:hover{
+    mix-blend-mode:luminosity;
     scale: 1.02;
     color: #fff;
     text-shadow: #111 1px 1px 1px;
     cursor: pointer;
 }
-
 /*SCROLL*/
 #scrollButton {
     display: none;
@@ -189,77 +160,61 @@ main {
     border: none;
     transition: .2s ease;
 }
-
 #scrollButton.show {
     display: block;
 }
-
-#scrollButton:active {
+#scrollButton:active{
     background-color: #ffffffaa;
     color: #111;
 }
-
-#scrollButton:hover {
-    scale: 1.1;
-    color: #111111;
-    background-color: #857c7c;
-}
-
-#scrollButton>* {
+#scrollButton>*{
     transition: .5s ease;
 }
-
-#scrollButton:hover>* {
+#scrollButton:hover>*{
     animation: up 1s ease infinite;
     scale: 1.1;
 }
-
 @keyframes up {
-    from {
+    from{
         translate: 0 0;
     }
-    50% {
+    50%{
         translate: 0 -.1em;
     }
-    to {
+    to{
         translate: 0 0;
     }
 }
-
 /*FOOTER*/
-footer {
+footer{
     height: 10vh;
     display: flex;
     justify-content: center;
     align-items: center;
 }
-
 footer ul {
     display: flex;
     gap: 2.5rem;
     list-style: none;
     justify-content: center;
 }
-
-footer ul li a * {
+footer ul li a *{
     scale: 1.5;
     color: #ddd;
     transition: .5s ease;
 }
-
-footer ul li a *:hover {
+footer ul li a *:hover{
     scale: 1.7;
     color: #fff;
 }
-
 @media screen and (max-width: 768px) {
-    .splide li {
+    .splide li{
         font-size: 4em;
     }
-    .sectors {
+    .sectors{
         padding: 1rem;
         gap: .5rem;
-        grid-template-areas:
+        grid-template-areas: 
             "one one"
             "two three"
             "four three"

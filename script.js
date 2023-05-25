@@ -1,11 +1,11 @@
 
 
-// SPLIDE.JS
+
 document.addEventListener( 'DOMContentLoaded', function() {
     const splide = new Splide( '.splide', {
-        type: 'loop',
-        drag: 'free',
-        snap: true,
+        type : 'loop',
+        drag : 'free',
+        snap : true,
         autoplay: true,
         interval: 3000,
         perPage: 1,
@@ -22,11 +22,10 @@ function scrollToTop() {
     document.body.scrollTop = 0;
 }
 
-// HIDDE BUTTON
+// HIDE BUTTON
 function scrollFunction() {
     let scrollTop = document.documentElement.scrollTop || document.body.scrollTop;
     scrollButton.classList.toggle("show", scrollTop > 20);
 }
 
-// CALL FUNCTION
 window.addEventListener("scroll", scrollFunction);
