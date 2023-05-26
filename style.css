@@ -182,9 +182,9 @@ main {
     background-color: #ffffff80;
     color: #111111dd;
     cursor: pointer;
-    z-index: 1;
     border: none;
     transition: .2s ease;
+    z-index: 1;
 }
 
 #scrollButton.show {
@@ -218,12 +218,12 @@ main {
 }
 
 /* Div icon pre-footer */
-.site-icon {
+.footer-logo {
     text-align: center;
     background-color: #777;
 }
 
-.site-icon i {
+.footer-logo i {
     font-size: 30px;
     color: #ccc;
 }
@@ -269,7 +269,7 @@ footer {
     transform: scale(1.5);
 }
 
-.footer-text {
+.authors {
     text-align: center;
     margin-top: 10px;
 }
