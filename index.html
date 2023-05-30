@@ -16,7 +16,11 @@
             <img src="assets/img/HomeDesignLogo.png" alt="Home Design Logo">
             <h1>Home Design</h1>
         </a>
-        <nav>
+        <button class="openNavBar" aria-controls="primary-navigation" aria-expanded="false">
+            <i class="fa-solid fa-bars"></i>
+            <i class="fa-solid fa-xmark none"></i>
+        </button>
+        <nav class="primary-navigation hide">
             <ul>
                 <li><a href="#About">About Us</a></li>
                 <li><a href="#Products">Products</a></li>
@@ -24,6 +28,7 @@
             </ul>
         </nav>
     </header>
+
     <main>
         <div class="splide">
             <div class="splide__track">
@@ -53,10 +58,11 @@
         </div>
         <button id="scrollButton" onclick="scrollToTop()"><i class="fa-solid fa-chevron-up"></i></button>
     </main>
-    <div class="footer-logo">
-        <i class="fa-solid fa-globe"></i>
-    </div>
+
     <footer>
+        <div class="footer-logo">
+            <i class="fa-solid fa-globe"></i>
+        </div>
         <div class="footer-content">
             <div class="social-media">
                 <ul>
@@ -85,9 +91,7 @@
         <div class="authors">
             <p>&copy; CSL & JoeTheorium, 2023</p>
         </div>
-    </footer>
-
-    <script src="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/js/splide.min.js"></script>
-    <script src="script.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/js/splide.min.js"></script>
+        <script src="script.js"></script>
 </body>
 </html>

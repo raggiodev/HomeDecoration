@@ -1,25 +1,23 @@
 @import url('https://fonts.googleapis.com/css2?family=Oswald:wght@400;500&family=Poppins&display=swap');
-
-* {
+*{
     margin: 0;
     padding: 0;
     box-sizing: border-box;
     font-family: 'Oswald', 'Poppins', sans-serif;
     font-size: 1.3rem;
 }
-
-html {
+html{
     scroll-behavior: smooth;
 }
-
-body {
+body{
     background: linear-gradient(90deg, #111, #333, #111);
     background-size: cover;
     min-height: 100vh;
 }
-
-header {
+/*HEADER*/
+header{
     height: 10vh;
+    min-height: 3em;
     background: linear-gradient(45deg, #ccc, #555);
     display: flex;
     justify-content: space-between;
@@ -28,42 +26,42 @@ header {
     padding-left: 1em;
     padding-right: 1em;
 }
-
-header>a {
+/*Logo*/
+header>a{
     height: 100%;
     text-decoration: none;
     transition: .5s ease;
     display: flex;
+    align-content: center;
     max-height: 90%;
     aspect-ratio: 1;
     width: 25em;
 }
-
-header>a:hover {
-    filter: brightness(1.7);
+header>a:hover{
+    filter:brightness(1.7);
 }
-
 header>a h1 {
     text-align: center;
     font-size: 2em;
     font-weight: 600;
     color: #1a394a;
 }
-
-header ul {
+/*nav*/
+.openNavBar{
+    display: none;
+}
+header nav ul{
     list-style: none;
     height: 100%;
     display: flex;
     gap: 1em;
 }
-
-header nav a {
+header nav a{
     text-decoration: none;
     color: #ddd;
     position: relative;
 }
-
-header nav a:before {
+header nav a:before{
     content: "";
     position: absolute;
     bottom: 0;
@@ -72,16 +70,15 @@ header nav a:before {
     width: 0%;
     transition: .5s ease-in;
 }
-
-header nav a:hover:before {
+header nav a:hover:before{
     width: 100%;
 }
-
-main {
+/*MAIN*/
+main{
     min-height: 80vh;
 }
-
-.splide li {
+/*Carrousel*/
+.splide li{
     font-size: xx-large;
     color: #fff;
     height: 80vh;
@@ -94,63 +91,53 @@ main {
     font-size: 8em;
     text-shadow: 2px 2px 8px #111;
 }
-
-.splide li:hover {
+.splide li:hover{
     cursor: grab;
 }
-
-.splide li:active {
+.splide li:active{
     cursor: grabbing;
 }
-
-.splide__pagination__page {
+.splide__pagination__page{
     display: none !important;
 }
-
 @keyframes move {
-    from {
+    from{
         background-position: top left;
     }
     50% {
         background-position: bottom right;
     }
-    from {
+    from{
         background-position: top left;
     }
 }
-
-.sectors {
+/*GRID TEMPLATE*/
+.sectors{
     padding-top: 2rem;
     padding: 2rem;
     display: grid;
     gap: 1.5rem;
     grid-auto-columns: 1fr;
-    grid-template-areas:
+    grid-template-areas: 
         "one one two three"
         "four five five three";
 }
-
-.sectors>article:nth-child(1) {
+.sectors>article:nth-child(1){
     grid-area: one;
 }
-
-.sectors>article:nth-child(2) {
+.sectors>article:nth-child(2){
     grid-area: two;
 }
-
-.sectors>article:nth-child(3) {
+.sectors>article:nth-child(3){
     grid-area: three;
 }
-
-.sectors>article:nth-child(4) {
+.sectors>article:nth-child(4){
     grid-area: four;
 }
-
-.sectors>article:nth-child(5) {
+.sectors>article:nth-child(5){
     grid-area: five;
 }
-
-.sectors article {
+.sectors article{
     min-height: 10rem;
     border-radius: 15px;
     background-color: aqua;
@@ -161,16 +148,14 @@ main {
     justify-content: center;
     transition: .5s ease;
 }
-
-.sectors article:hover {
-    mix-blend-mode: luminosity;
+.sectors article:hover{
+    mix-blend-mode:luminosity;
     scale: 1.02;
     color: #fff;
     text-shadow: #111 1px 1px 1px;
     cursor: pointer;
 }
-
-/*SCROLL*/
+/*Sroll Button UP*/
 #scrollButton {
     display: none;
     position: fixed;
@@ -182,109 +167,166 @@ main {
     background-color: #ffffff80;
     color: #111111dd;
     cursor: pointer;
+    z-index: 1;
     border: none;
     transition: .2s ease;
-    z-index: 1;
 }
-
 #scrollButton.show {
     display: block;
 }
-
-#scrollButton:active {
+#scrollButton:active{
     background-color: #ffffffaa;
     color: #111;
 }
-
-#scrollButton>* {
+#scrollButton>*{
     transition: .5s ease;
 }
-
-#scrollButton:hover>* {
+#scrollButton:hover>*{
     animation: up 1s ease infinite;
     scale: 1.1;
 }
-
 @keyframes up {
-    from {
+    from{
         translate: 0 0;
     }
-    50% {
+    50%{
         translate: 0 -.1em;
     }
-    to {
+    to{
         translate: 0 0;
     }
-}
-
-/* Div icon pre-footer */
-.footer-logo {
-    text-align: center;
-    background-color: #777;
-}
-
-.footer-logo i {
-    font-size: 30px;
-    color: #ccc;
 }
 
 /* FOOTER */
 footer {
     background-color: #111;
     color: #ddd;
-    padding: 20px;
+    min-height: 10vh;
+    padding-bottom: .5rem;
 }
-
+.footer-logo {
+    text-align: center;
+    background-color: #777;
+    padding: .1em;
+}
+.footer-logo i {
+    font-size: 30px;
+    color: #ccc;
+}
 .footer-content {
-    display: grid;
-    /* Primer div ocupa ancho disponible, segundo div ocupa ancho necesario */
-    grid-template-columns: 1fr auto;
-    align-items: center;
-    gap: 10px;
+    display: flex;
+    justify-content:space-between;
+    flex-wrap: wrap;
+    padding-top: .5rem;
+    padding-left: 5rem;
+    padding-right: 5rem;
 }
-
 .social-media ul,
 .additional-info ul {
     list-style: none;
-    padding: 0;
-    margin: 0;
+    display: flex;
+    flex-wrap: wrap;
+    text-align: center;
+    justify-content: center;
+    gap: 10px;
 }
-
-.social-media ul li,
-.additional-info ul li {
-    display: inline-block;
-    margin-right: 10px;
+.social-media ul li a *{
+font-size: 24px;
+color: #ddd;
+transition: .5s ease;
 }
-
-.social-media ul li a *,
 .additional-info ul li a {
-    font-size: 24px;
     color: #ddd;
+    font-size: 18px;
     transition: .5s ease;
 }
-
 .social-media ul li a *:hover,
 .additional-info ul li a:hover {
     color: #fff;
-    transform: scale(1.5);
+    scale: 1.2;
 }
-
-.authors {
+.authors p {
+    padding-top: .5rem;
     text-align: center;
-    margin-top: 10px;
+    font-size: 20px;
 }
 
+/*MEDIAQUERIES*/
 @media screen and (max-width: 768px) {
-    .splide li {
-        font-size: 4em;
+    /*HEADER*/
+    header>a{
+        height: 2em;
     }
-    .sectors {
-        padding: 1rem;
-        gap: .5rem;
-        grid-template-areas:
-            "one one"
-            "two three"
-            "four three"
-            "five five";
+    header>a h1{
+        font-size: 1.2em;
+    }
+        /*nav*/
+        .openNavBar{
+            display: block;
+            background: transparent;
+            border-radius: .5rem;
+            border: 2px solid #111;
+            height: 2em;
+            width: 2em;
+            cursor: pointer;
+            z-index: 2;
+            transition: .5s ease;
+            min-width: 2em;
+            position: fixed;
+            top: .5em;
+            right: 1em;
+        }
+        .openNavBar[aria-expanded="false"]>.fa-xmark{
+            display: none;
+        }
+        .openNavBar[aria-expanded="true"]>.fa-bars{
+            display: none;
+        }
+        .openNavBar[aria-expanded="true"]{
+            color: #aaa;
+            border-color: #aaa;
+        }
+        header nav{
+            position: fixed;
+            top: 0;
+            right: 0;
+            z-index: 1;
+            height: 100vh;
+            width: 10em;
+            padding-top: 2em;
+            text-align: center;
+            background: linear-gradient(180deg, #111111dd, #333333dd, #111);
+            transition: .5s ease;
+        }
+        .hide{
+            width: 0;
+        }
+        header nav ul{
+            flex-direction: column;
+        }
+    /*MAIN*/
+        /*Carrousel*/
+        .splide li{
+            font-size: 4em;
+        }
+        .splide__arrows{
+            display: none;
+        }
+        /*Grid Template*/
+        .sectors{
+            padding: 1rem;
+            gap: .5rem;
+            grid-template-areas: 
+                "one one"
+                "two three"
+                "four three"
+                "five five";
+        }
+    /*FOOTER*/
+    .footer-content {
+        justify-content: space-around;
+        padding-left: 0;
+        padding-right: 0;
+        text-align: center;
     }
 }
